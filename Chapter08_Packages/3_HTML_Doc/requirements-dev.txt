@@ -1,0 +1,15 @@
+# Linting/Tooling
+pylint
+flake8
+mypy
+isort
+black
+pre-commit
+autopep8
+
+# Documentation
+mkdocs
+mkdocstrings
+mkdocstrings[python]
+mkdocs-material
+Pygments
