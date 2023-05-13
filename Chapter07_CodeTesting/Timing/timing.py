@@ -22,14 +22,14 @@ def timing(fn: Callable) -> Callable:
 
 
 @timing
-def test_addition_own_implementation():
+def test_addition_own_implementation() -> None:
     for _ in range(100_000):
         v1 = Vector2D(random.randint(-10, 10), random.randint(-10, 10))
         v2 = Vector2D(random.randint(-10, 10), random.randint(-10, 10))
         r = v1 + v2  # noqa
 
 
-def test_addition_standard_lib():
+def test_addition_standard_lib() -> None:
     import_str = """
 import random
 from vector import Vector2D
