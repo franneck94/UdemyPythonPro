@@ -5,20 +5,14 @@ from math import sqrt
 
 @total_ordering
 class Vector2D:
-    def __init__(self, x=0.0, y=0.0):
+    def __init__(self, x=0, y=0):
         """Create a vector2d object.
 
-        Parameters
-        ----------
-        x : float, optional
-            The x-coordinate of the 2d vector, by default 0.0
-        y : float, optional
-            The y-coordinate of the 2d vector, by default 0.0
-
-        Raises
-        ------
-        TypeError
-            You must pass in int/float values for x and y!
+        :param x: [description], defaults to 0
+        :type x: int, optional
+        :param y: [description], defaults to 0
+        :type y: int, optional
+        :raises TypeError: [description]
         """
         if isinstance(x, float) and isinstance(y, float):
             self.x = x
@@ -42,10 +36,8 @@ class Vector2D:
     def __abs__(self):
         """This is a summary
 
-        Returns
-        -------
-        dtype
-            This is a description of the return value.
+        :return: This is a return value description
+        :rtype: dtype
         """
         return sqrt(pow(self.x, 2) + pow(self.y, 2))
 

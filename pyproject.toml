@@ -26,7 +26,8 @@ known_third_party = [
     "gym",
     "PyQt6",
     "PyQt5",
-    "pyqtgraph"
+    "pyqtgraph",
+    "torch"
 ]
 multi_line_output = 3
 lines_after_imports = 2
@@ -38,23 +39,26 @@ line_length = 80
 [tool.mypy]
 warn_return_any = true
 warn_unused_configs = true
-ignore = []
+ignore_missing_imports = true
 follow_imports = "silent"
 check_untyped_defs = true
 disallow_incomplete_defs = true
-disallow_untyped_defs = true
+disallow_untyped_defs = false
 disallow_subclassing_any = true
 strict_optional = true
 no_implicit_optional = true
 warn_no_return = true
 warn_unreachable = true
+allow_untyped_globals = true
+allow_redefinition = false
+strict_equality = false
 
 [tool.ruff]
 select = ["F", "E"]
-extend-select = ["W", "I002", "B", "PLE", "PLW", "NPY", "RUF", "PD", "PT"]
-unfixable = ["NPY002"]
-ignore = ["SIM", "UP", "UP035", "NPY002", "F401", "E402", "UP006", "SIM103", "SIM110", "PLW2901", "B006", "B007", "PLE0101"]
-fixable = ["E", "F", "W", "I", "B", "UP", "PLE", "PLW", "NPY", "RUF", "PD", "SIM", "PT"]
+extend-select = ["W", "N", "UP", "B", "A", "C4", "PT", "SIM", "PD", "PLE", "RUF"]
+ignore = ["SIM300"]
+fixable = ["F", "E", "W", "UP", "B", "A", "C4"]
+unfixable = []
 target-version = "py39"
 
 line-length = 80
