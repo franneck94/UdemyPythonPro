@@ -1,13 +1,12 @@
 from time import time
-from typing import List
 
 import codon
 
 
 @codon.jit
 def clip_vector_codon(
-    a: List[float], min_value: float, max_value: float
-) -> List[float]:
+    a: list[float], min_value: float, max_value: float
+) -> list[float]:
     len_ = len(a)
     for i in range(len_):
         if a[i] < min_value:
@@ -18,8 +17,8 @@ def clip_vector_codon(
 
 
 def clip_vector(
-    a: List[float], min_value: float, max_value: float
-) -> List[float]:
+    a: list[float], min_value: float, max_value: float
+) -> list[float]:
     len_ = len(a)
     for i in range(len_):
         if a[i] < min_value:

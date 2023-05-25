@@ -1,5 +1,4 @@
 import array
-from typing import List
 
 import numpy as np
 
@@ -10,10 +9,10 @@ from .cython_computations import _parallel_cython_clip_vector
 
 
 def python_clip_vector(
-    vector_in: List[float],
+    vector_in: list[float],
     min_value: float,
     max_value: float,
-    vector_out: List[float],
+    vector_out: list[float],
 ):
     for idx in range(len(vector_in)):
         vector_out[idx] = min(max(vector_in[idx], min_value), max_value)

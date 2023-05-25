@@ -8,8 +8,8 @@ import math_cython
 
 NUM_ELEMENTS = 100_000
 LST = [float(i) for i in range(NUM_ELEMENTS)]
-NP_ARR = np.array([i for i in range(NUM_ELEMENTS)]).astype(np.float32)
-PY_ARR = array.array("f", [i for i in range(NUM_ELEMENTS)])
+NP_ARR = np.array(list(range(NUM_ELEMENTS))).astype(np.float32)
+PY_ARR = array.array("f", list(range(NUM_ELEMENTS)))
 
 
 NUM_ROUNDS = 50

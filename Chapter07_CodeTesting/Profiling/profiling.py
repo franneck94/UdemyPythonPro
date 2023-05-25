@@ -3,7 +3,6 @@
 import cProfile
 import io
 import pstats
-import random
 from functools import wraps
 from pathlib import Path
 

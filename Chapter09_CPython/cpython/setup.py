@@ -5,9 +5,9 @@ from setuptools import setup
 
 ext = Extension(name="math_cpython", sources=["math_cpython/clip.c"])
 
-setup_args = dict(
-    packages=find_packages(where="math_cpython"),
-    ext_modules=[ext],
-)
+setup_args = {
+    "packages": find_packages(where="math_cpython"),
+    "ext_modules": [ext],
+}
 
 setup(**setup_args)
