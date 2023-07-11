@@ -1,11 +1,8 @@
 import argparse
 
 
-def check_for_boolean_value(val):
-    if val == "True":
-        return True
-    else:
-        return False
+def check_for_boolean_value(val: str) -> bool:
+    return val == "True"
 
 
 def main() -> None:
@@ -16,18 +13,24 @@ def main() -> None:
     parser.add_argument(
         "--name", help="Enter your name (str)", type=str, required=True
     )
+    # parser.add_argument(
+    #     "--admin",
+    #     help="Are your an admin? (bool)",
+    #     type=check_for_boolean_value,
+    #     required=False,
+    #     default=False,
+    # )
     parser.add_argument(
         "--admin",
         help="Are your an admin? (bool)",
-        type=check_for_boolean_value,
-        required=False,
-        default=False,
+        action=argparse.BooleanOptionalAction,
     )
     args = parser.parse_args()
 
     age = args.age
     name = args.name
-    is_admin = args.admin
+    # is_admin = args.admin
+    is_admin = args.admin is not None
 
     print(age, type(age))
     print(name, type(name))
