@@ -12,27 +12,7 @@ numpy
 snakeviz
 matplotlib
 pyinstrument
-
-# Testing
-pytest
-codecov
-pytest-cov
-tox
-pre-commit
-pytest-benchmark
-
-# Linting
-flake8
-pylint
-mypy
-autopep8
-isort
-black
 cython-lint
+tox
 
-# Documentation
-mkdocs
-mkdocstrings
-mkdocstrings[python]
-mkdocs-material
-Pygments
+-r requirements-dev.txt
