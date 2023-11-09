@@ -9,7 +9,7 @@ from typing import SupportsFloat
 
 
 @total_ordering
-class Vector2D:
+class Vector2D:  # noqa: PLW1641
     def __init__(self, x: SupportsFloat = 0.0, y: SupportsFloat = 0.0) -> None:
         """Create a vector with the given x and y values.
 
