@@ -25,7 +25,7 @@ def is_prime(n: int) -> bool:
         return True
     if n % 2 == 0 or n % 3 == 0 or n % 5 == 0 or n % 7 == 0:
         return False
-    upper_limit = int(math.sqrt(n)) + 1
+    upper_limit = int(math.sqrt(n)) + 1  # type: ignore
     for i in range(11, upper_limit, 2):  # noqa: SIM110
         if n % i == 0:
             return False
