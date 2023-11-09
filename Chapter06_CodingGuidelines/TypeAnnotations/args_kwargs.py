@@ -1,11 +1,11 @@
 from __future__ import annotations
 
-from typing import Any
+from typing import Any  # noqa: F401
 from typing import Callable
 from typing import Union
 
 
-def f(*args: int, **kwargs: Union[int, float]) -> None:
+def f(*args: int, **kwargs: Union[int, float]) -> None:  # noqa: PYI041
     print(f"{args}, {kwargs}")
 
 

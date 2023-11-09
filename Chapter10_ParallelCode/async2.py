@@ -7,17 +7,17 @@ async def f(name):
 
 
 async def main1():
-    L1 = await f("A")
-    L2 = await f("B")
-    L3 = await f("C")
+    L1 = await f("A")  # noqa: N806
+    L2 = await f("B")  # noqa: N806
+    L3 = await f("C")  # noqa: N806
     print(L1, L2, L3)
 
 
 async def main2():
-    L = await asyncio.gather(f("A"), f("B"), f("C"))
+    L = await asyncio.gather(f("A"), f("B"), f("C"))  # noqa: N806
 
     my_tasks = [f("A"), f("B"), f("C")]
-    L = await asyncio.gather(*my_tasks)
+    L = await asyncio.gather(*my_tasks)  # noqa: N806
     print(L)
 
 

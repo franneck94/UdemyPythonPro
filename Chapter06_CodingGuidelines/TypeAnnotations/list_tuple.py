@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Any
+from typing import Any  # noqa: F401
 from typing import List
 from typing import Tuple
 from typing import Union

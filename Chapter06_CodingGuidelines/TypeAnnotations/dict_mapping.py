@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Dict
+from typing import Dict  # noqa: F401
 from typing import Mapping
 from typing import Union
 

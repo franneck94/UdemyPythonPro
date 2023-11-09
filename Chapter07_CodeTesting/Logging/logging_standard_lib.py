@@ -27,7 +27,7 @@ def divide_integers(a: int, b: int) -> Union[None, float]:
     try:
         logger.info(f"a={a}, b={b}")
         result = a / b
-        return result
+        return result  # noqa: RET504
     except ZeroDivisionError as e:
         logger.exception(f"Exception was raised: {e}")
         return None

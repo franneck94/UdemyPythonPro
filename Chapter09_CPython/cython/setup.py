@@ -7,7 +7,7 @@ from setuptools import Extension
 from setuptools import setup
 
 
-if platform.system() == "Windows":
+if platform.system() == "Windows":  # noqa: SIM108
     OPEN_MP = "/openmp"
 else:
     OPEN_MP = "-fopenmp"

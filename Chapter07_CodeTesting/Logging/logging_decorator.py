@@ -11,7 +11,7 @@ def log(fn):
             fn_result = fn(*args, **kwargs)
             print(f"Called function {fn.__name__} at {time_str}")
             return fn_result
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001
             print(
                 f"Called function {fn.__name__} at {time_str} "
                 f"with an exception: '{e}'"
@@ -23,7 +23,7 @@ def log(fn):
 @log
 def divide_integers(a: int, b: int) -> float:
     result = a / b
-    return result
+    return result  # noqa: RET504
 
 
 def main() -> None:

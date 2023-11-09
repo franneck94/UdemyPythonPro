@@ -1,16 +1,16 @@
 from __future__ import absolute_import
 
-import imp
-import os
-import sys
-from os import abort
-from os import access
-from os import pardir
-from os import path
+import imp  # noqa: F401
+import os  # noqa: F401
+import sys  # noqa: F401
+from os import abort  # noqa: F401
+from os import access  # noqa: F401
+from os import pardir  # noqa: F401
+from os import path  # noqa: F401
 
-import numpy as np
+import numpy as np  # noqa: F401
 
-from my_lib import A
+from my_lib import A  # noqa: F401
 
 
 print("Hey")
