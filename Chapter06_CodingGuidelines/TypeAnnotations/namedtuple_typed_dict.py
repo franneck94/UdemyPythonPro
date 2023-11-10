@@ -1,6 +1,6 @@
 from typing import NamedTuple
 from typing import TypedDict
-from typing import Union
+from typing import Union  # noqa: F401
 
 
 class User(NamedTuple):

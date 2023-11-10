@@ -1,12 +1,12 @@
 from __future__ import annotations
 
 from typing import Any  # noqa: F401
-from typing import List
-from typing import Tuple
+from typing import List  # noqa: F401
+from typing import Tuple  # noqa: F401
 from typing import Union
 
 
-Number = Union[int, float]
+Number = Union[int, float]  # noqa: UP007
 
 
 def append_list(lst: list[Number], val: Number) -> None:

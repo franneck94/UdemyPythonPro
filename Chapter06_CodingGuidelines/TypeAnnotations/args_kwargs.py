@@ -1,10 +1,8 @@
 from __future__ import annotations
 
 from typing import Any  # noqa: F401
-from typing import Union, TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from collections.abc import Callable
+from typing import Callable
+from typing import Union  # noqa: F401
 
 
 def f(*args: int, **kwargs: int | float) -> None:  # noqa: PYI041

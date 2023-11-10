@@ -1,6 +1,6 @@
 import logging
 from pathlib import Path
-from typing import Union
+from typing import Union  # noqa: F401
 
 
 # Mode: DEBUG: Detailed debug information
@@ -27,13 +27,13 @@ def divide_integers(a: int, b: int) -> None | float:
     try:
         logger.info(f"a={a}, b={b}")
         result = a / b
-        return result  # noqa: RET504
+        return result  # noqa: RET504, TRY300
     except ZeroDivisionError as e:
-        logger.exception(f"Exception was raised: {e}")
+        logger.exception(f"Exception was raised: {e}")  # noqa: TRY401
         return None
 
 
-def main():
+def main() -> None:
     for _ in range(3):
         print(divide_integers(10, 0))
 

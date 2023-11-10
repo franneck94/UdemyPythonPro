@@ -3,7 +3,7 @@ import time
 from functools import wraps
 from timeit import Timer
 from typing import Any
-from collections.abc import Callable
+from typing import Callable
 
 from vector import Vector2D
 

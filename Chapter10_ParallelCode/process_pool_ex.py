@@ -33,7 +33,7 @@ def is_prime(n: int) -> bool:
     return True
 
 
-def main():
+def main() -> None:
     start = time.perf_counter_ns()
 
     with ProcessPoolExecutor() as ex:

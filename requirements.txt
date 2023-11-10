@@ -1,7 +1,3 @@
-pip>=22.1
-setuptools>=60.0
-wheel>=0.36
-
 # Libraries
 ipython
 ipykernel
@@ -14,5 +10,6 @@ matplotlib
 pyinstrument
 cython-lint
 tox
+staticfg
 
 -r requirements-dev.txt

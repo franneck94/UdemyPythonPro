@@ -5,6 +5,7 @@ import io
 import pstats
 from functools import wraps
 from pathlib import Path
+from typing import Any, Callable
 
 import numpy as np
 
@@ -14,9 +15,9 @@ from vector import Vector2D
 FILE_PATH = Path(__file__).parent.joinpath("profiling_stats.prof")
 
 
-def profile(fn):
+def profile(fn: Callable) -> Callable:
     @wraps(fn)
-    def profiler(*args, **kwargs):
+    def profiler(*args: Any, **kwargs: Any) -> Any:
         profiler = cProfile.Profile()
         profiler.enable()
         fn_result = fn(*args, **kwargs)
@@ -33,14 +34,14 @@ def profile(fn):
 
 
 @profile
-def test_addition_own_implementation():
+def test_addition_own_implementation() -> None:
     for _ in range(100_000):
         v1 = Vector2D(np.random.randint(-10, 10), np.random.randint(-10, 10))
         v2 = Vector2D(np.random.randint(-10, 10), np.random.randint(-10, 10))
         c3 = v1 + v2  # noqa
 
 
-def main():
+def main() -> None:
     test_addition_own_implementation()
 
 

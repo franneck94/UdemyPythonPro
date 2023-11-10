@@ -1,11 +1,9 @@
 from __future__ import annotations
 
-from typing import List
-from typing import Optional
-from typing import Union, TYPE_CHECKING  # noqa: F401
-
-if TYPE_CHECKING:
-    from collections.abc import Callable
+from typing import Callable
+from typing import List  # noqa: F401
+from typing import Optional  # noqa: F401
+from typing import Union  # noqa: F401
 
 
 def print_list(values: list[int]) -> None:

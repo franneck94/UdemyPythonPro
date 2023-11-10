@@ -1,17 +1,17 @@
 from __future__ import annotations
 
-from typing import Any
 from collections.abc import Collection  # noqa: F401
 from collections.abc import Container  # noqa: F401
 from collections.abc import Iterable  # noqa: F401
 from collections.abc import MutableSequence  # noqa: F401
-from typing import Protocol
 from collections.abc import Sequence  # noqa: F401
 from collections.abc import Sized  # noqa: F401
+from typing import Any
+from typing import Protocol
 
 
 class SizedMutableIterable(Protocol):
-    def __len__(self):
+    def __len__(self) -> Any:
         pass
 
     def __getitem__(self, idx: int) -> Any:

@@ -1,16 +1,18 @@
 import time
 from datetime import datetime
 from functools import wraps
+from typing import Any
+from typing import Callable
 
 
-def log(fn):
+def log(fn: Callable) -> Callable:
     @wraps(fn)
-    def logger(*args, **kwargs):
+    def logger(*args: Any, **kwargs: Any) -> Any:
         time_str = datetime.utcnow().strftime("%H:%M:%S")
         try:
             fn_result = fn(*args, **kwargs)
             print(f"Called function {fn.__name__} at {time_str}")
-            return fn_result
+            return fn_result  # noqa: TRY300
         except Exception as e:  # noqa: BLE001
             print(
                 f"Called function {fn.__name__} at {time_str} "

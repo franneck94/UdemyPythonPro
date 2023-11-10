@@ -2,14 +2,14 @@ import asyncio
 import sys
 
 
-async def foo():
+async def foo() -> int:
     print("start foo")
     await asyncio.sleep(2.0)
     print("end foo")
     return 0
 
 
-async def bar():
+async def bar() -> int:
     print("start bar")
     await asyncio.sleep(4.0)
     print("end bar")

@@ -6,7 +6,7 @@ import numbers
 from functools import total_ordering
 from math import sqrt
 from typing import SupportsFloat
-from typing import Union
+from typing import Union  # noqa: F401
 
 
 @total_ordering
