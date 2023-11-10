@@ -1,9 +1,11 @@
 from __future__ import annotations
 
-from collections.abc import Callable
 from typing import List
 from typing import Optional
-from typing import Union  # noqa: F401
+from typing import Union, TYPE_CHECKING  # noqa: F401
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 
 def print_list(values: list[int]) -> None:
@@ -14,7 +16,7 @@ def function(values: list[int], print_fn: Callable[[list[int]], None]) -> None:
     print_fn(values)
 
 
-def append_value(value: int, my_list: Optional[list[int]] = None) -> list[int]:
+def append_value(value: int, my_list: list[int] | None = None) -> list[int]:
     if my_list:
         my_list.append(value)
     else:

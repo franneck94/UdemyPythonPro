@@ -11,7 +11,7 @@ class User(NamedTuple):
 class Point2D(TypedDict, total=False):
     x: int
     y: int
-    label: Union[str, int]
+    label: str | int
 
 
 def main() -> None:

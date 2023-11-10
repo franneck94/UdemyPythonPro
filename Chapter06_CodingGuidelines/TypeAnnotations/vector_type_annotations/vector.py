@@ -118,8 +118,8 @@ class Vector2D:
         return Vector2D(x, y)
 
     def __mul__(
-        self, other: Union[Vector2D, SupportsFloat]
-    ) -> Union[Vector2D, SupportsFloat]:
+        self, other: Vector2D | SupportsFloat
+    ) -> Vector2D | SupportsFloat:
         """Return the multiplication of self and the other vector/number.
 
         Args:

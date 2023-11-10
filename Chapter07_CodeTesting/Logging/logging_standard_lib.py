@@ -23,7 +23,7 @@ file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
 
-def divide_integers(a: int, b: int) -> Union[None, float]:
+def divide_integers(a: int, b: int) -> None | float:
     try:
         logger.info(f"a={a}, b={b}")
         result = a / b

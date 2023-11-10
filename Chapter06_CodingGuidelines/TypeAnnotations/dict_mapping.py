@@ -1,13 +1,15 @@
 from __future__ import annotations
 
 from typing import Dict  # noqa: F401
-from collections.abc import Mapping
-from typing import Union
+from typing import Union, TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from collections.abc import Mapping
 
 
 def iterate_over_dict(
-    my_dict: Mapping[str, Union[int, float]]
-) -> Mapping[str, Union[int, float]]:
+    my_dict: Mapping[str, int | float]
+) -> Mapping[str, int | float]:
     for key, val in my_dict.items():
         print(key, val)
     return my_dict

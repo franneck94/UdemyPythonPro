@@ -19,7 +19,7 @@ def print_3d_tuple(tpl: tuple[Number, bool, str]) -> None:
 
 
 if __name__ == "__main__":
-    lst: list[Union[int, float]] = [1, 2, 3]
+    lst: list[int | float] = [1, 2, 3]
     tpl = (1, True, "")
 
     append_list(lst, 4)
