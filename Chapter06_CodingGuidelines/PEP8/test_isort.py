@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 
 import imp  # noqa: F401
 import os  # noqa: F401

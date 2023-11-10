@@ -1,13 +1,13 @@
 from __future__ import annotations
 
 from typing import Any
-from typing import Collection  # noqa: F401
-from typing import Container  # noqa: F401
-from typing import Iterable  # noqa: F401
-from typing import MutableSequence  # noqa: F401
+from collections.abc import Collection  # noqa: F401
+from collections.abc import Container  # noqa: F401
+from collections.abc import Iterable  # noqa: F401
+from collections.abc import MutableSequence  # noqa: F401
 from typing import Protocol
-from typing import Sequence  # noqa: F401
-from typing import Sized  # noqa: F401
+from collections.abc import Sequence  # noqa: F401
+from collections.abc import Sized  # noqa: F401
 
 
 class SizedMutableIterable(Protocol):
