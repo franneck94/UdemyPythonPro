@@ -1,5 +1,4 @@
 import argparse
-import sys
 
 
 def main() -> None:
@@ -7,9 +6,6 @@ def main() -> None:
     *. All command-line arguments present are gathered into a list.
     +. Just like *, Additionally, an error if there wasnt at least one
     """
-    print(f"argv: {sys.argv}")
-    print(f"argc: {len(sys.argv)}")
-
     parser = argparse.ArgumentParser(
         prog="ProgramName",
         usage="How to",
@@ -20,14 +16,16 @@ def main() -> None:
         "-a",
         "--ages",
         help="Enter the ages",
-        nargs="*",
+        nargs="+",
+        type=int,
         required=True,
     )
     parser.add_argument(
         "-n",
         "--names",
         help="Enter the names",
-        nargs="*",
+        nargs="+",
+        type=str,
         required=True,
     )
     parser.add_argument(
@@ -38,8 +36,8 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    age = args.age
-    name = args.name
+    age = args.ages
+    name = args.names
     verbose = args.verbose
 
     if verbose:
