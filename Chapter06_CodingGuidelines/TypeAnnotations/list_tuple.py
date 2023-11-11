@@ -6,7 +6,7 @@ from typing import Tuple  # noqa: F401
 from typing import Union
 
 
-Number = Union[int, float]  # noqa: UP007
+Number = Union[int, float]
 
 
 def append_list(lst: list[Number], val: Number) -> None:

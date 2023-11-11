@@ -5,7 +5,7 @@ from typing import Callable
 from typing import Union  # noqa: F401
 
 
-def f(*args: int, **kwargs: int | float) -> None:  # noqa: PYI041
+def f(*args: int, **kwargs: int | float) -> None:
     print(f"{args}, {kwargs}")
 
 

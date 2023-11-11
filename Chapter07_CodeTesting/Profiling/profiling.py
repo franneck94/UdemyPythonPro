@@ -5,7 +5,8 @@ import io
 import pstats
 from functools import wraps
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
+from typing import Callable
 
 import numpy as np
 
