@@ -5,8 +5,8 @@ from staticfg import CFGBuilder
 
 FILEPATH = Path(__file__).parent.joinpath("syntax_tree.py")
 
-def main() -> None:
 
+def main() -> None:
     cfg = CFGBuilder().build_from_file("test", FILEPATH)
     cfg.build_visual("test", "png")
 

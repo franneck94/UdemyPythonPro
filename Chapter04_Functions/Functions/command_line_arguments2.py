@@ -3,6 +3,10 @@ import sys
 
 
 def main() -> None:
+    """nargs
+    *. All command-line arguments present are gathered into a list.
+    +. Just like *, Additionally, an error if there wasnt at least one
+    """
     print(f"argv: {sys.argv}")
     print(f"argc: {len(sys.argv)}")
 
@@ -14,16 +18,16 @@ def main() -> None:
     )
     parser.add_argument(
         "-a",
-        "--age",
-        help="Enter your age (int)",
-        type=int,
+        "--ages",
+        help="Enter the ages",
+        nargs="*",
         required=True,
     )
     parser.add_argument(
         "-n",
-        "--name",
-        help="Enter your name (str)",
-        type=str,
+        "--names",
+        help="Enter the names",
+        nargs="*",
         required=True,
     )
     parser.add_argument(
