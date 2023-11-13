@@ -29,7 +29,7 @@ class Vector2D:
 
     def __eq__(self, other_vector: object) -> bool:
         if not isinstance(other_vector, Vector2D):
-            raise TypeError("You must pass in a Vector2D instance!")
+            return False
         return self.x == other_vector.x and self.y == other_vector.y
 
     def __lt__(self, other_vector: Vector2D) -> bool:

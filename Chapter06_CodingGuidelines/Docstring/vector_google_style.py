@@ -2,7 +2,6 @@
 """
 from __future__ import annotations
 
-import numbers
 from functools import total_ordering
 from math import sqrt
 
@@ -11,7 +10,7 @@ from math import sqrt
 class Vector2D:
     """Vector2D class to perform simple vector operations."""
 
-    def __init__(self, x=0, y=0):
+    def __init__(self, x: float = 0.0, y: float = 0.0) -> None:
         """Create a instance with the given x and y values.
 
         Args:
@@ -21,13 +20,13 @@ class Vector2D:
         Raises:
             TypeError: If x or y are not a number.
         """
-        if isinstance(x, numbers.Real) and isinstance(y, numbers.Real):
+        if isinstance(x, float) and isinstance(y, float):
             self.x = x
             self.y = y
         else:
             raise TypeError("You must pass in int/float values for x and y!")
 
-    def __call__(self):
+    def __call__(self) -> str:
         """Callable for the instance representation.
 
         Returns:
@@ -36,7 +35,7 @@ class Vector2D:
         print("Calling the __call__ function!")
         return self.__repr__()
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """Return the instance representation.
 
         Returns:
@@ -44,7 +43,7 @@ class Vector2D:
         """
         return f"vector.Vector2D({self.x}, {self.y})"
 
-    def __str__(self):
+    def __str__(self) -> str:
         """The instance as a string.
 
         Returns:
@@ -52,7 +51,7 @@ class Vector2D:
         """
         return f"({self.x}, {self.y})"
 
-    def __bool__(self):
+    def __bool__(self) -> bool:
         """Return the truth value of the instance.
 
         Returns:
@@ -61,7 +60,7 @@ class Vector2D:
         """
         return bool(abs(self))
 
-    def __abs__(self):
+    def __abs__(self) -> float:
         """Return the length (magnitude) of the instance.
 
         Returns:
@@ -69,21 +68,7 @@ class Vector2D:
         """
         return sqrt(self.x**2.0 + self.y**2.0)
 
-    def check_vector_types(self, vector):
-        """Check if the vector is an instance of the VectorND class.
-
-        Args:
-            vector: A instance.
-
-        Raises:
-            TypeError: If vector is not an instance of the VectorND class.
-        """
-        if not isinstance(self, Vector2D) or not isinstance(vector, Vector2D):
-            raise TypeError(
-                "You have to pass in two instances of the vector class!"
-            )
-
-    def __eq__(self, other_vector):
+    def __eq__(self, other_vector: object) -> bool:
         """Check if the instances have the same values.
 
         Args:
@@ -93,13 +78,11 @@ class Vector2D:
             True, if the both instances have the same values.
             False, else.
         """
-        self.check_vector_types(other_vector)
-        is_equal = False
-        if self.x == other_vector.x and self.y == other_vector.y:
-            is_equal = True
-        return is_equal
+        if not isinstance(other_vector, Vector2D):
+            return False
+        return self.x == other_vector.x and self.y == other_vector.y
 
-    def __lt__(self, other_vector):
+    def __lt__(self, other_vector: Vector2D) -> bool:
         """Check if the self instance is less than the other instance.
 
         Args:
@@ -109,13 +92,11 @@ class Vector2D:
             True, if the self instance is less than the other instance.
             False, else.
         """
-        self.check_vector_types(other_vector)
-        is_less_than = False
-        if abs(self) < abs(other_vector):
-            is_less_than = True
-        return is_less_than
+        if not isinstance(other_vector, Vector2D):
+            raise TypeError("You must pass in a Vector2D instance!")
+        return abs(self) < abs(other_vector)
 
-    def __add__(self, other_vector):
+    def __add__(self, other_vector: Vector2D) -> Vector2D:
         """Returns the addition vector of the self and the other instance.
 
         Args:
@@ -124,12 +105,13 @@ class Vector2D:
         Returns:
             The addition vector of the self and the other instance.
         """
-        self.check_vector_types(other_vector)
+        if not isinstance(other_vector, Vector2D):
+            raise TypeError("You must pass in a Vector2D instance!")
         x = self.x + other_vector.x
         y = self.y + other_vector.y
         return Vector2D(x, y)
 
-    def __sub__(self, other_vector):
+    def __sub__(self, other_vector: Vector2D) -> Vector2D:
         """Return the subtraction vector of the self and the other instance.
 
         Args:
@@ -138,12 +120,13 @@ class Vector2D:
         Returns:
             The subtraction vector of the self and the other instance.
         """
-        self.check_vector_types(other_vector)
+        if not isinstance(other_vector, Vector2D):
+            raise TypeError("You must pass in a Vector2D instance!")
         x = self.x - other_vector.x
         y = self.y - other_vector.y
         return Vector2D(x, y)
 
-    def __mul__(self, other):
+    def __mul__(self, other: Vector2D | float) -> float | Vector2D:
         """Return the multiplication of self and left vector or number.
 
         Args:
@@ -157,14 +140,11 @@ class Vector2D:
         """
         if isinstance(other, Vector2D):
             return self.x * other.x + self.y * other.y
-        elif isinstance(other, numbers.Real):  # noqa: RET505
-            return Vector2D(self.x * other, self.y * other)
-        else:
-            raise TypeError(
-                "You must pass in a instance or an int/float number!"
-            )
+        if not isinstance(other, float):
+            raise TypeError("You must pass in an int/float!")
+        return Vector2D(self.x * other, self.y * other)
 
-    def __truediv__(self, other):
+    def __truediv__(self, other: float) -> Vector2D:
         """Return the multiplication of self and left vector or number.
 
         Args:
@@ -177,10 +157,6 @@ class Vector2D:
         Returns:
             The multiplication of self and left vector or number.
         """
-        if isinstance(other, numbers.Real):
-            if other != 0.0:
-                return Vector2D(self.x / other, self.y / other)
-            else:  # noqa: RET505
-                raise ValueError("You cannot divide by zero!")
-        else:
-            raise TypeError("You must pass in an int/float value!")
+        if not isinstance(other, float):
+            raise TypeError("You must pass in an int/float!")
+        return Vector2D(self.x / other, self.y / other)
