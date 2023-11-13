@@ -37,8 +37,7 @@ def iterate_over_length(
 
 
 def main() -> None:
-    values = [1, 2, 3]
-
+    values: list[Any] = [1, 2, 3]
     iterate_over_length(values)
 
 
