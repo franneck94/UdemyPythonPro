@@ -20,7 +20,7 @@ class Vector2D:
         Raises:
             TypeError: If x or y are not a number.
         """
-        if isinstance(x, float) and isinstance(y, float):
+        if isinstance(x, float | int) and isinstance(y, float | int):
             self.x = x
             self.y = y
         else:
