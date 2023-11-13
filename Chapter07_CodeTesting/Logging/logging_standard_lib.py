@@ -1,6 +1,5 @@
 import logging
 from pathlib import Path
-from typing import Union  # noqa: F401
 
 
 # Mode: DEBUG: Detailed debug information

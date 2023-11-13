@@ -1,31 +1,49 @@
 import argparse
+import sys
 
 
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--val1", help="first value (int)", type=int, required=True, dest="val1"
+def main() -> None:
+    print(f"argv: {sys.argv}")
+    print(f"argc: {len(sys.argv)}")
+
+    parser = argparse.ArgumentParser(
+        prog="ProgramName",
+        usage="How to",
+        description="What the program does",
+        epilog="Text at the bottom of help",
     )
     parser.add_argument(
-        "--val2", help="first value (str)", type=str, required=True, dest="val2"
-    )
-    parser.add_argument(
-        "--val3",
-        help="first value (bool)",
-        type=bool,
+        "-a",
+        "--age",
+        help="Enter your age (int)",
+        type=int,
         required=True,
-        dest="val3",
+    )
+    parser.add_argument(
+        "-n",
+        "--name",
+        help="Enter your name (str)",
+        type=str,
+        required=True,
+    )
+    parser.add_argument(
+        "-v",
+        "--verbose",
+        help="Verbose print",
+        action="store_true",
     )
     args = parser.parse_args()
-    print(args)
 
-    a = args.val1
-    b = args.val2
-    c = args.val3
+    age = args.age
+    name = args.name
+    verbose = args.verbose
 
-    print(a, type(a))
-    print(b, type(b))
-    print(c, type(c))
+    if verbose:
+        print(age, type(age))
+        print(name, type(name))
+    else:
+        print(age)
+        print(name)
 
 
 if __name__ == "__main__":

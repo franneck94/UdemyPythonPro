@@ -24,8 +24,7 @@ def log(fn: Callable) -> Callable:
 
 @log
 def divide_integers(a: int, b: int) -> float:
-    result = a / b
-    return result  # noqa: RET504
+    return a / b
 
 
 def main() -> None:

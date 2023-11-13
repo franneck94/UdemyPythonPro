@@ -6,7 +6,7 @@ def divide_integers(a: int, b: int) -> float:
     logger.debug(f"a={a}, b={b}")
     try:
         result = a / b
-    except Exception as e:  # noqa: BLE001
+    except ZeroDivisionError as e:
         logger.log("DEBUG", str(e))
         return 0
     return result
