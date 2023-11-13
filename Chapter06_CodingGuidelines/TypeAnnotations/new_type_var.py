@@ -7,11 +7,15 @@ UserId1 = NewType("UserId1", int)
 UserId2 = int
 
 
-def name_by_id1(user_id: UserId1) -> None:
+def name_by_id1(
+    user_id: UserId1,
+) -> None:
     print(user_id)
 
 
-def name_by_id2(user_id: UserId2) -> None:
+def name_by_id2(
+    user_id: UserId2,
+) -> None:
     print(user_id)
 
 

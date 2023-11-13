@@ -1,4 +1,3 @@
-# Always raises, infinite loop
 import sys
 from typing import NoReturn
 
