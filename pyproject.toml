@@ -1,5 +1,5 @@
 [tool.black]
-target-version = ['py310']
+target-version = ['py311']
 line-length = 80
 skip-string-normalization = false
 skip-magic-trailing-comma = false
@@ -11,7 +11,7 @@ force-exclude = '''
 '''
 
 [tool.isort]
-py_version = 310
+py_version = 311
 sections = [
     "FUTURE",
     "STDLIB",
@@ -61,10 +61,10 @@ skip_glob = [
 filter_files = true
 
 [tool.ruff]
-target-version = "py310"
+target-version = "py311"
 select = ["F", "E"]
 extend-select = ["W", "C90", "I", "N", "UP", "YTT", "ASYNC", "BLE", "B", "A", "COM", "C4", "EXE", "FA", "ISC", "ICN", "INP", "PIE", "PYI", "PT", "Q", "RSE", "RET", "SLF", "SLOT", "SIM", "TID", "TCH", "INT", "ARG", "PTH", "TD", "FIX", "PD", "PL", "TRY", "FLY", "NPY", "PERF", "FURB", "RUF"]
-ignore = ["I001", "ANN401", "SIM300", "PERF203", "ANN101", "B905", "NPY002", "COM812", "N999", "PTH", "INP001", "TRY003", "PLW1641", "PLR2004", "UP035", "UP007", "PLR6301", "PYI041", "UP038", "PYI024"]
+ignore = ["I001", "ANN401", "SIM300", "PERF203", "ANN101", "B905", "NPY002", "COM812", "N999", "PTH", "INP001", "TRY003", "PLW1641", "PLR2004", "UP035", "UP007", "PLR6301", "PYI041", "UP038", "PYI024", "E402"]
 fixable = ["W", "C90", "I", "N", "UP", "YTT", "ASYNC", "BLE", "B", "A", "COM", "C4", "EXE", "FA", "ISC", "ICN", "INP", "PIE", "PYI", "PT", "Q", "RSE", "RET", "SLF", "SLOT", "SIM", "TID", "TCH", "INT", "ARG", "PTH", "TD", "FIX", "PD", "PL", "TRY", "FLY", "NPY", "PERF", "FURB", "RUF"]
 unfixable = []
 line-length = 80
@@ -91,7 +91,7 @@ line-ending = "auto"
 
 [tool.mypy]
 # Platform configuration
-python_version = "3.10"
+python_version = "3.11"
 # imports related
 ignore_missing_imports = true
 follow_imports = "silent"
@@ -131,7 +131,7 @@ show_error_codes = true
 exclude = ["docs", "test", "tests", "command_line_arguments", "vector", "main", "setup", "benchmark", "Chapter02_Basics"]
 
 [tool.pyright]
-pythonVersion = "3.10"
+pythonVersion = "3.11"
 typeCheckingMode = "basic"
 # enable subset of "strict"
 reportDuplicateImport = true

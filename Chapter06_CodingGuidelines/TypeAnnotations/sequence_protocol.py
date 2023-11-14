@@ -38,7 +38,7 @@ def iterate_over_length(
 
 def main() -> None:
     values: list[Any] = [1, 2, 3]
-    iterate_over_length(values)
+    iterate_over_length(values)  # pyright: ignore
 
 
 if __name__ == "__main__":
