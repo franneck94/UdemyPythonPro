@@ -1,0 +1,15 @@
+# Libraries
+ipython
+ipykernel
+loguru
+Cython
+numba
+numpy
+snakeviz
+matplotlib
+pyinstrument
+cython-lint
+tox
+staticfg
+
+-r requirements-dev.txt
