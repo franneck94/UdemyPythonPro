@@ -1,6 +1,6 @@
 import numpy as np
-
 from pyinstrument import Profiler
+
 from vector import Vector2D
 
 

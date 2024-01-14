@@ -1,6 +1,6 @@
 def append_list(
     lst: list[float] | list[int],
-    val: float | int,
+    val: float | int,  # noqa: PYI041
 ) -> None:
     lst.append(val)  # type: ignore
 

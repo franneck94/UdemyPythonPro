@@ -1,6 +1,6 @@
+-r requirements-dev.txt
+
 # Libraries
-ipython
-ipykernel
 loguru
 Cython
 numba
@@ -11,5 +11,3 @@ pyinstrument
 cython-lint
 tox
 staticfg
-
--r requirements-dev.txt

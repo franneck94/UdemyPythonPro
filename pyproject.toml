@@ -1,5 +1,5 @@
 [tool.black]
-target-version = ['py311']
+target-version = ['py310']
 line-length = 80
 skip-string-normalization = false
 skip-magic-trailing-comma = false
@@ -11,39 +11,19 @@ force-exclude = '''
 '''
 
 [tool.isort]
-py_version = 311
-sections = [
-    "FUTURE",
-    "STDLIB",
-    "THIRDPARTY",
-    "FIRSTPARTY",
-    "LOCALFOLDER"
-]
-default_section = "FIRSTPARTY"
-known_third_party = [
-    "numpy",
-    "pandas",
-    "keras",
-    "tensorflow",
-    "sklearn",
-    "matplotlib",
-    "scipy",
-    "h5py",
-    "seaborn",
-    "numba",
-    "gym",
-    "PyQt5",
-    "PyQt6",
-    "pyqtgraph",
-    "torch",
-    "tqdm",
-    "cv2",
-    "skimage",
-    "tensorcross",
-    "tensorflow_datasets"
-]
+py_version = 310
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+default_section = "THIRDPARTY"
+known_third_party = []
 known_first_party = []
-known_local_folder = []
+known_local_folder = [
+    "vector",
+    "math_cpp_python",
+    "math_cpython",
+    "math_cython",
+    "math_mypyc",
+    "math_numba",
+]
 # style: black
 multi_line_output = 3
 include_trailing_comma = true
@@ -54,26 +34,146 @@ line_length = 80
 split_on_trailing_comma = true
 lines_after_imports = 2
 force_single_line = true
-skip_glob = [
-  "docs/*",
-  "setup.py"
-]
+skip_glob = ["docs/*", "setup.py"]
 filter_files = true
 
 [tool.ruff]
-target-version = "py311"
+target-version = "py310"
 select = ["F", "E"]
-extend-select = ["W", "C90", "I", "N", "UP", "YTT", "ASYNC", "BLE", "B", "A", "COM", "C4", "EXE", "FA", "ISC", "ICN", "INP", "PIE", "PYI", "PT", "Q", "RSE", "RET", "SLF", "SLOT", "SIM", "TID", "TCH", "INT", "ARG", "PTH", "TD", "FIX", "PD", "PL", "TRY", "FLY", "NPY", "PERF", "FURB", "RUF"]
-ignore = ["I001", "ANN401", "SIM300", "PERF203", "ANN101", "B905", "NPY002", "COM812", "N999", "PTH", "INP001", "TRY003", "PLW1641", "PLR2004", "UP035", "UP007", "PLR6301", "PYI041", "UP038", "PYI024", "E402"]
-fixable = ["W", "C90", "I", "N", "UP", "YTT", "ASYNC", "BLE", "B", "A", "COM", "C4", "EXE", "FA", "ISC", "ICN", "INP", "PIE", "PYI", "PT", "Q", "RSE", "RET", "SLF", "SLOT", "SIM", "TID", "TCH", "INT", "ARG", "PTH", "TD", "FIX", "PD", "PL", "TRY", "FLY", "NPY", "PERF", "FURB", "RUF"]
+extend-select = [
+    "W",
+    "C90",
+    "I",
+    "N",
+    "UP",
+    "YTT",
+    "ANN",
+    "ASYNC",
+    "BLE",
+    "B",
+    "A",
+    "COM",
+    "C4",
+    "EXE",
+    "FA",
+    "ISC",
+    "ICN",
+    "INP",
+    "PIE",
+    "PYI",
+    "PT",
+    "Q",
+    "RSE",
+    "RET",
+    "SLF",
+    "SLOT",
+    "SIM",
+    "TID",
+    "TCH",
+    "INT",
+    "ARG",
+    "PTH",
+    "TD",
+    "FIX",
+    "PD",
+    "PL",
+    "TRY",
+    "FLY",
+    "NPY",
+    "PERF",
+    "FURB",
+    "RUF",
+    "TRIO",
+]
+ignore = [
+    "I001",
+    "ANN401",
+    "SIM300",
+    "PERF203",
+    "ANN101",
+    "B905",
+    "NPY002",
+    "COM812",
+    "N999",
+    "PTH",
+    "INP001",
+    "TRY003",
+    "PLW1641",
+    "E203",
+    "PLW1514",
+    "PLR",
+    "UP",
+    "ANN201",
+    "PLC",
+    "ANN001",
+    "FURB118",
+]
+fixable = [
+    "W",
+    "C90",
+    "I",
+    "N",
+    "UP",
+    "YTT",
+    "ANN",
+    "ASYNC",
+    "BLE",
+    "B",
+    "A",
+    "COM",
+    "C4",
+    "EXE",
+    "FA",
+    "ISC",
+    "ICN",
+    "INP",
+    "PIE",
+    "PYI",
+    "PT",
+    "Q",
+    "RSE",
+    "RET",
+    "SLF",
+    "SLOT",
+    "SIM",
+    "TID",
+    "TCH",
+    "INT",
+    "ARG",
+    "PTH",
+    "TD",
+    "FIX",
+    "PD",
+    "PL",
+    "TRY",
+    "FLY",
+    "NPY",
+    "PERF",
+    "FURB",
+    "RUF",
+    "TRIO",
+]
 unfixable = []
 line-length = 80
+indent-width = 4
 extend-exclude = ["docs", "test", "tests"]
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+[tool.ruff.lint]
+preview = true
 [tool.ruff.isort]
 force-single-line = true
 force-sort-within-sections = false
 lines-after-imports = 2
+known-first-party = []
+known-local-folder = []
+known-third-party = []
+section-order = [
+    "future",
+    "standard-library",
+    "third-party",
+    "first-party",
+    "local-folder",
+]
 [tool.ruff.mccabe]
 max-complexity = 24
 [tool.ruff.pycodestyle]
@@ -88,10 +188,12 @@ quote-style = "double"
 indent-style = "space"
 skip-magic-trailing-comma = false
 line-ending = "auto"
+preview = false
+docstring-code-format = true
 
 [tool.mypy]
 # Platform configuration
-python_version = "3.11"
+python_version = "3.10"
 # imports related
 ignore_missing_imports = true
 follow_imports = "silent"
@@ -108,7 +210,7 @@ warn_return_any = false
 # Untyped definitions and calls
 check_untyped_defs = true
 disallow_untyped_calls = false
-disallow_untyped_defs = false
+disallow_untyped_defs = true
 disallow_incomplete_defs = true
 disallow_untyped_decorators = false
 # Disallow dynamic typing
@@ -128,20 +230,30 @@ strict_equality = true
 show_error_context = false
 show_column_numbers = false
 show_error_codes = true
-exclude = ["docs", "test", "tests", "command_line_arguments", "vector", "main", "setup", "benchmark", "Chapter02_Basics"]
+exclude = [
+    "docs",
+    "test",
+    "tests",
+    "command_line_arguments",
+    "vector",
+    "main",
+    "setup",
+    "benchmark",
+    "Chapter02_Basics",
+]
 
 [tool.pyright]
-pythonVersion = "3.11"
+pythonVersion = "3.10"
 typeCheckingMode = "basic"
 # enable subset of "strict"
-reportDuplicateImport = true
+reportDuplicate = true
 reportInvalidStubStatement = true
 reportOverlappingOverload = true
 reportPropertyTypeMismatch = true
-reportUntypedClassDecorator = true
-reportUntypedFunctionDecorator = false
+reportUntypedClassDecorator = false
+reportUntypedFunctionDecorator = true
 reportUntypedNamedTuple = true
-reportUnusedImport = true
+reportUnused = true
 # disable subset of "basic"
 reportGeneralTypeIssues = true
 reportMissingModuleSource = false
@@ -152,3 +264,4 @@ reportOptionalOperand = true
 reportOptionalSubscript = true
 reportPrivateImportUsage = true
 reportUnboundVariable = true
+exclude = ["docs", "setup.py"]

@@ -5,7 +5,7 @@ from typing import Callable
 
 def f(
     *args: int,
-    **kwargs: int | float,
+    **kwargs: int | float,  # noqa: PYI041
 ) -> None:
     print(f"{args}, {kwargs}")
 

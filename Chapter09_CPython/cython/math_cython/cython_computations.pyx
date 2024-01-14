@@ -1,9 +1,7 @@
+cimport cython
 cimport numpy as np
 
-cimport cython
-
 import numpy as np
-
 from cython.parallel import prange
 
 
