@@ -25,7 +25,7 @@ class Vector2D:
 
     def __call__(self) -> str:
         print("Calling the __call__ function!")
-        return self.__repr__()
+        return self.__repr__()  # noqa: PLC2801
 
     def __repr__(self) -> str:
         return f"vector.Vector2D({self.x}, {self.y})"
@@ -44,7 +44,7 @@ class Vector2D:
         """
         return sqrt(pow(self.x, 2) + pow(self.y, 2))
 
-    def check_vector_types(self, vector2):
+    def check_vector_types(self, vector2):  # noqa: ANN001, ANN201
         if not isinstance(self, Vector2D) or not isinstance(vector2, Vector2D):
             raise TypeError(
                 "You have to pass in two instances of the vector class!"

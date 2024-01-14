@@ -85,7 +85,17 @@ extend-select = [
     "RUF",
     "TRIO",
 ]
-ignore = ["PLR2004", "INP001", "ANN401", "COM812"]
+ignore = [
+    "PLR2004",
+    "INP001",
+    "ANN401",
+    "COM812",
+    "ANN101",
+    "TRY003",
+    "PLW1641",
+    "I001",
+    "B905",
+]
 fixable = [
     "W",
     "C90",

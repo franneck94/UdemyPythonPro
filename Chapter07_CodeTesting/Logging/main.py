@@ -9,7 +9,7 @@ filepath = Path(__file__).parent.joinpath("log_loguru.log")
 logger.add(filepath, rotation="1 Week")
 
 
-def main():
+def main():  # noqa: ANN201
     for _ in range(3):
         print(divide_integers(10, 0))
 

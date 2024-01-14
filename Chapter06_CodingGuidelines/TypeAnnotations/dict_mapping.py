@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Mapping
+from typing import Mapping  # noqa: UP035
 
 
 def iterate_over_dict(

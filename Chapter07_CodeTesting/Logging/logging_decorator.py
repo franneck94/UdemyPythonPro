@@ -1,8 +1,8 @@
 import time
+from collections.abc import Callable
 from datetime import datetime
 from functools import wraps
 from typing import Any
-from typing import Callable
 
 
 def log(fn: Callable) -> Callable:
@@ -22,7 +22,7 @@ def log(fn: Callable) -> Callable:
     return logger
 
 
-@log
+@log  # noqa: FURB118
 def divide_integers(a: int, b: int) -> float:
     return a / b
 

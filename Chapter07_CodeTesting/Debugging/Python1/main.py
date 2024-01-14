@@ -3,7 +3,7 @@
 from vector import Vector2D
 
 
-def main():
+def main():  # noqa: ANN201
     v1 = Vector2D(2, -2)
     print(v1)
     v2 = Vector2D(2, 3)
