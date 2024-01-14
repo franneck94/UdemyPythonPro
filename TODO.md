@@ -1,3 +1,0 @@
-# TODO
-
-- Dekorieren von Klassen
