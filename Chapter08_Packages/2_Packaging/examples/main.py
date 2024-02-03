@@ -2,8 +2,8 @@ import fastvector
 
 
 def main() -> None:
-    V = fastvector.Vector2D(1, 1)
-    print(V)
+    vec = fastvector.Vector2D(1, 1)
+    print(vec)
 
 
 if __name__ == "__main__":

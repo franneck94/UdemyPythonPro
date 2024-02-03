@@ -56,7 +56,14 @@ force-single-line = true
 force-sort-within-sections = false
 lines-after-imports = 2
 known-first-party = []
-known-local-folder = []
+known-local-folder = [
+    "vector",
+    "math_cpp_python",
+    "math_cpython",
+    "math_cython",
+    "math_mypyc",
+    "math_numba",
+]
 known-third-party = []
 section-order = [
     "future",
