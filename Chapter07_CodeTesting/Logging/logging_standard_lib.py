@@ -24,11 +24,11 @@ logger.addHandler(file_handler)
 
 def divide_integers(a: int, b: int) -> None | float:
     try:
-        logger.info(f"a={a}, b={b}")
+        logger.info(f"a={a}, b={b}")  # noqa: G004
         result = a / b
         return result  # noqa: RET504, TRY300
     except ZeroDivisionError as e:
-        logger.exception(f"Exception was raised: {e}")  # noqa: TRY401
+        logger.exception(f"Exception was raised: {e}")  # noqa: G004, TRY401
         return None
 
 

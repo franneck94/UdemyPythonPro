@@ -37,8 +37,8 @@ def profile(fn: Callable) -> Callable:
 @profile
 def test_addition_own_implementation() -> None:
     for _ in range(100_000):
-        v1 = Vector2D(np.random.randint(-10, 10), np.random.randint(-10, 10))  # noqa: NPY002
-        v2 = Vector2D(np.random.randint(-10, 10), np.random.randint(-10, 10))  # noqa: NPY002
+        v1 = Vector2D(np.random.randint(-10, 10), np.random.randint(-10, 10))
+        v2 = Vector2D(np.random.randint(-10, 10), np.random.randint(-10, 10))
         c3 = v1 + v2  # noqa
 
 

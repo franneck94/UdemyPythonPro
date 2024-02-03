@@ -1,6 +1,7 @@
 import time
 from collections.abc import Callable
 from datetime import datetime
+from datetime import timezone
 from functools import wraps
 from typing import Any
 
@@ -8,7 +9,7 @@ from typing import Any
 def log(fn: Callable) -> Callable:
     @wraps(fn)
     def logger(*args: Any, **kwargs: Any) -> Any:
-        time_str = datetime.utcnow().strftime("%H:%M:%S")
+        time_str = datetime.now(tz=timezone.utc).strftime("%H:%M:%S")
         try:
             fn_result = fn(*args, **kwargs)
             print(f"Called function {fn.__name__} at {time_str}")

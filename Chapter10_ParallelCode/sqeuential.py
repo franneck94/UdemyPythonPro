@@ -19,7 +19,7 @@ NUMBERS = [
 
 
 def is_prime(n: int) -> bool:
-    if n < 2:
+    if n < 2:  # noqa: PLR2004
         return False
     if n in {2, 3, 5, 7}:
         return True

@@ -25,7 +25,7 @@ class Vector2D:
 
     def __call__(self) -> str:
         print("Calling the __call__ function!")
-        return self.__repr__()  # noqa: PLC2801
+        return self.__repr__()
 
     def __repr__(self) -> str:
         return f"vector.Vector2D({self.x}, {self.y})"
@@ -85,7 +85,7 @@ class Vector2D:
 
     def __truediv__(self, other: float) -> Vector2D:
         if isinstance(other, float):
-            if other != 0.0:
+            if other != 0.0:  # noqa: PLR2004
                 return Vector2D(self.x / other, self.y / other)
             raise ValueError("You cannot divide by zero!")
         raise TypeError("You must pass in an int/float value!")
