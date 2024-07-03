@@ -141,27 +141,3 @@ exclude = [
     "benchmark",
     "Chapter02_Basics",
 ]
-
-[tool.pyright]
-pythonVersion = "3.10"
-typeCheckingMode = "basic"
-# enable subset of "strict"
-reportDuplicateImport = true
-reportInvalidStubStatement = true
-reportOverlappingOverload = true
-reportPropertyTypeMismatch = true
-reportUntypedClassDecorator = false
-reportUntypedFunctionDecorator = true
-reportUntypedNamedTuple = true
-reportUnused = true
-# disable subset of "basic"
-reportGeneralTypeIssues = true
-reportMissingModuleSource = false
-reportOptionalCall = true
-reportOptionalIterable = true
-reportOptionalMemberAccess = true
-reportOptionalOperand = true
-reportOptionalSubscript = true
-reportPrivateImportUsage = true
-reportUnboundVariable = true
-exclude = ["docs", "setup.py"]

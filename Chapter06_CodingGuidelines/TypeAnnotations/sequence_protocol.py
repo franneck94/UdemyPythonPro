@@ -1,11 +1,11 @@
 from __future__ import annotations
 
-from collections.abc import Collection  # noqa: F401 # pyright: ignore
-from collections.abc import Container  # noqa: F401 # pyright: ignore
-from collections.abc import Iterable  # noqa: F401 # pyright: ignore
-from collections.abc import MutableSequence  # noqa: F401 # pyright: ignore
-from collections.abc import Sequence  # noqa: F401 # pyright: ignore
-from collections.abc import Sized  # noqa: F401 # pyright: ignore
+from collections.abc import Collection  # noqa: F401
+from collections.abc import Container  # noqa: F401
+from collections.abc import Iterable  # noqa: F401
+from collections.abc import MutableSequence  # noqa: F401
+from collections.abc import Sequence  # noqa: F401
+from collections.abc import Sized  # noqa: F401
 from typing import Any
 from typing import Protocol
 
@@ -38,7 +38,7 @@ def iterate_over_length(
 
 def main() -> None:
     values: list[Any] = [1, 2, 3]
-    iterate_over_length(values)  # pyright: ignore
+    iterate_over_length(values)
 
 
 if __name__ == "__main__":
