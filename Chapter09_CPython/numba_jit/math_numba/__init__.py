@@ -7,7 +7,9 @@ cc.verbose = True
 
 @cc.export("clip_vector", "f4[:](f4[:], f4, f4)")
 def clip_vector(
-    a: list[float], min_value: float, max_value: float
+    a: list[float],
+    min_value: float,
+    max_value: float,
 ) -> list[float]:
     len_ = len(a)
     for i in range(len_):

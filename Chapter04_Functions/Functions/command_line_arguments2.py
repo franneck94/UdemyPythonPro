@@ -4,7 +4,7 @@ import argparse
 def main() -> None:
     """nargs
     *. All command-line arguments present are gathered into a list.
-    +. Just like *, Additionally, an error if there wasnt at least one
+    +. Just like *, Additionally, an error if there wasnt at least one.
     """
     parser = argparse.ArgumentParser(
         prog="ProgramName",

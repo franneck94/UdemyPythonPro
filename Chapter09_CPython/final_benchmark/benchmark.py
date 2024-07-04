@@ -1,5 +1,5 @@
-"""Test code.
-"""
+"""Test code."""
+
 import array
 from typing import Any
 

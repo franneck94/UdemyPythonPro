@@ -1,5 +1,5 @@
-"""Own implementation of a 2D vector class.
-"""
+"""Own implementation of a 2D vector class."""
+
 from __future__ import annotations
 
 from functools import total_ordering
@@ -21,7 +21,8 @@ class Vector2D:
             self.x = x
             self.y = y
         else:
-            raise TypeError("You must pass in int/float values for x and y!")
+            msg = "You must pass in int/float values for x and y!"
+            raise TypeError(msg)
 
     def __call__(self) -> str:
         print("Calling the __call__ function!")
@@ -37,17 +38,18 @@ class Vector2D:
         return bool(abs(self))
 
     def __abs__(self) -> float:
-        """This is a summary
+        """This is a summary.
 
         :return: This is a return value description
         :rtype: dtype
         """
         return sqrt(pow(self.x, 2) + pow(self.y, 2))
 
-    def check_vector_types(self, vector2):  # noqa: ANN001, ANN201
+    def check_vector_types(self, vector2):
         if not isinstance(self, Vector2D) or not isinstance(vector2, Vector2D):
+            msg = "You have to pass in two instances of the vector class!"
             raise TypeError(
-                "You have to pass in two instances of the vector class!"
+                msg,
             )
 
     def __eq__(self, other_vector: object) -> bool:
@@ -57,9 +59,7 @@ class Vector2D:
 
     def __lt__(self, other_vector: Vector2D) -> bool:
         self.check_vector_types(other_vector)
-        if abs(self) < abs(other_vector):
-            return True
-        return False
+        return abs(self) < abs(other_vector)
 
     def __add__(self, other_vector: Vector2D) -> Vector2D:
         self.check_vector_types(other_vector)
@@ -81,11 +81,14 @@ class Vector2D:
             return self.x * other.x + self.y * other.y
         if isinstance(other, float):
             return Vector2D(self.x * other, self.y * other)
-        raise TypeError("You must pass in a instance or an int/float number!")
+        msg = "You must pass in a instance or an int/float number!"
+        raise TypeError(msg)
 
     def __truediv__(self, other: float) -> Vector2D:
         if isinstance(other, float):
-            if other != 0.0:  # noqa: PLR2004
+            if other != 0.0:
                 return Vector2D(self.x / other, self.y / other)
-            raise ValueError("You cannot divide by zero!")
-        raise TypeError("You must pass in an int/float value!")
+            msg = "You cannot divide by zero!"
+            raise ValueError(msg)
+        msg = "You must pass in an int/float value!"
+        raise TypeError(msg)

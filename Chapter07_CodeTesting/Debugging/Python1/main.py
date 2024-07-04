@@ -1,9 +1,9 @@
-"""Test code.
-"""
+"""Test code."""
+
 from vector import Vector2D
 
 
-def main():  # noqa: ANN201
+def main():
     v1 = Vector2D(2, -2)
     print(v1)
     v2 = Vector2D(2, 3)

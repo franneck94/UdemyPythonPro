@@ -13,17 +13,17 @@ def log(fn: Callable) -> Callable:
         try:
             fn_result = fn(*args, **kwargs)
             print(f"Called function {fn.__name__} at {time_str}")
-            return fn_result  # noqa: TRY300
-        except Exception as e:  # noqa: BLE001
+            return fn_result
+        except Exception as e:
             print(
                 f"Called function {fn.__name__} at {time_str} "
-                f"with an exception: '{e}'"
+                f"with an exception: '{e}'",
             )
 
     return logger
 
 
-@log  # noqa: FURB118
+@log
 def divide_integers(a: int, b: int) -> float:
     return a / b
 

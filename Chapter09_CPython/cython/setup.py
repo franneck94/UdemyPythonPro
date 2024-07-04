@@ -6,7 +6,7 @@ from setuptools import Extension
 from setuptools import setup
 
 
-if platform.system() == "Windows":  # noqa: SIM108
+if platform.system() == "Windows":
     OPEN_MP = "/openmp"
 else:
     OPEN_MP = "-fopenmp"
@@ -18,7 +18,7 @@ CYTHON_EXTENSIONS = [
         sources=["math_cython/cython_computations.pyx"],
         extra_compile_args=[OPEN_MP],
         extra_link_args=[OPEN_MP],
-    )
+    ),
 ]
 
 EXT_MODULES = cythonize(CYTHON_EXTENSIONS, language_level="3")

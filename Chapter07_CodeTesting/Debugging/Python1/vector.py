@@ -1,5 +1,5 @@
-"""Own implementation of a 2D vector class.
-"""
+"""Own implementation of a 2D vector class."""
+
 from __future__ import annotations
 
 from functools import total_ordering
@@ -24,7 +24,8 @@ class Vector2D:
             self.x = x
             self.y = y
         else:
-            raise TypeError("You must pass in int/float values for x and y!")
+            msg = "You must pass in int/float values for x and y!"
+            raise TypeError(msg)
 
     def __call__(self) -> str:
         """Callable for the instance representation.
@@ -93,7 +94,8 @@ class Vector2D:
             False, else.
         """
         if not isinstance(other_vector, Vector2D):
-            raise TypeError("You must pass in a Vector2D instance!")
+            msg = "You must pass in a Vector2D instance!"
+            raise TypeError(msg)
         return abs(self) < abs(other_vector)
 
     def __add__(self, other_vector: Vector2D) -> Vector2D:
@@ -106,7 +108,8 @@ class Vector2D:
             The addition vector of the self and the other instance.
         """
         if not isinstance(other_vector, Vector2D):
-            raise TypeError("You must pass in a Vector2D instance!")
+            msg = "You must pass in a Vector2D instance!"
+            raise TypeError(msg)
         x = self.x + other_vector.x
         y = self.y + other_vector.y
         return Vector2D(x, y)
@@ -121,7 +124,8 @@ class Vector2D:
             The subtraction vector of the self and the other instance.
         """
         if not isinstance(other_vector, Vector2D):
-            raise TypeError("You must pass in a Vector2D instance!")
+            msg = "You must pass in a Vector2D instance!"
+            raise TypeError(msg)
         x = self.x - other_vector.x
         y = self.y - other_vector.y
         return Vector2D(x, y)
@@ -141,7 +145,8 @@ class Vector2D:
         if isinstance(other, Vector2D):
             return self.x * other.x + self.y * other.y
         if not isinstance(other, float):
-            raise TypeError("You must pass in an int/float!")
+            msg = "You must pass in an int/float!"
+            raise TypeError(msg)
         return Vector2D(self.x * other, self.y * other)
 
     def __truediv__(self, other: float) -> Vector2D:
@@ -158,5 +163,6 @@ class Vector2D:
             The multiplication of self and left vector or number.
         """
         if not isinstance(other, float):
-            raise TypeError("You must pass in an int/float!")
+            msg = "You must pass in an int/float!"
+            raise TypeError(msg)
         return Vector2D(self.x / other, self.y / other)

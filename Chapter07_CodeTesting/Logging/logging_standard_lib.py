@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 # Formatter, FileHandler
 formatter = logging.Formatter(
-    "%(asctime)s:%(levelname)s:%(funcName)s:%(message)s"
+    "%(asctime)s:%(levelname)s:%(funcName)s:%(message)s",
 )
 filepath = Path(__file__).parent.joinpath("log_standard.log")
 file_handler = logging.FileHandler(filepath)
@@ -24,11 +24,11 @@ logger.addHandler(file_handler)
 
 def divide_integers(a: int, b: int) -> None | float:
     try:
-        logger.info(f"a={a}, b={b}")  # noqa: G004
+        logger.info(f"a={a}, b={b}")
         result = a / b
-        return result  # noqa: RET504, TRY300
+        return result
     except ZeroDivisionError as e:
-        logger.exception(f"Exception was raised: {e}")  # noqa: G004, TRY401
+        logger.exception(f"Exception was raised: {e}")
         return None
 
 

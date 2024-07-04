@@ -1,5 +1,5 @@
-"""Test code.
-"""
+"""Test code."""
+
 import cProfile
 import io
 import pstats

@@ -5,7 +5,9 @@ import codon
 
 @codon.jit
 def clip_vector_codon(
-    a: list[float], min_value: float, max_value: float
+    a: list[float],
+    min_value: float,
+    max_value: float,
 ) -> list[float]:
     len_ = len(a)
     for i in range(len_):
@@ -17,7 +19,9 @@ def clip_vector_codon(
 
 
 def clip_vector(
-    a: list[float], min_value: float, max_value: float
+    a: list[float],
+    min_value: float,
+    max_value: float,
 ) -> list[float]:
     len_ = len(a)
     for i in range(len_):
