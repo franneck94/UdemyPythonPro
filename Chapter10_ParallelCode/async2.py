@@ -3,7 +3,7 @@ import asyncio
 
 
 async def f(name: str) -> None:
-    await asyncio.sleep(2)
+    await asyncio.sleep(2.0)
     print(f"Task {name}")
 
 
